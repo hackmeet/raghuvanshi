@@ -2610,8 +2610,9 @@ footer {
 /* --------------------------------------------------------------------------
    MODALS
    -------------------------------------------------------------------------- */
-.modal-backdrop { padding: 16px; align-items: flex-end; }
-.modal-container { max-height: 88vh; overflow-y: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+.modal-backdrop { padding: 16px; align-items: center; justify-content: center; }
+.modal-container { display: flex; flex-direction: column; max-height: 85vh; width: 100%; overflow: hidden; margin: auto; }
+.modal-body { overflow-y: auto; -webkit-overflow-scrolling: touch; max-height: none; padding: 20px 16px; flex: 1; }
 .modal-close-btn { width: 44px; height: 44px; }
 
 .row-inputs { flex-direction: column; gap: 15px !important; }
@@ -2690,7 +2691,7 @@ footer {
   .visit-fab { left: 18px; right: auto; bottom: 18px; justify-content: flex-start; padding: 12px 20px 12px 16px; }
   footer { padding: 56px 20px 90px; }
 
-  .modal-backdrop { align-items: center; }
+  .modal-backdrop { align-items: center; padding-top: 0; }
   .modal-container { width: auto; }
   .row-inputs { flex-direction: row; }
 }
@@ -2802,6 +2803,22 @@ footer {
   .nav-container { padding: 8px 14px; }
   .logo-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .logo-text-col { min-width: 0; }
+
+  /* Compact 2-column grid for menu on mobile (like Suko Nasto) */
+  .menu-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .menu-card .card-info { padding: 12px 10px; }
+  .menu-card .item-title { font-size: 0.95rem; margin-bottom: 6px; }
+  .menu-card .item-desc { display: none; } /* Hidden to save space on mobile */
+  .menu-card .item-price { font-size: 1.05rem; }
+  .menu-card .item-unit { font-size: 0.7rem; padding: 2px 6px; }
+  .menu-card .card-img-wrapper { aspect-ratio: 1/1; }
+  .badge-popular { top: 8px; left: 8px; font-size: 0.65rem; padding: 3px 8px; }
+  .veg-indicator { bottom: 8px; right: 8px; transform: scale(0.75); transform-origin: bottom right; }
+
+  /* Announcement Modal Mobile Fixes */
+  .announce-title { font-size: 1.45rem; }
+  .announce-desc { font-size: 0.85rem; margin-bottom: 16px; }
+  .announce-info { padding: 12px; font-size: 0.85rem; }
 }
 
 /* ==========================================================================
