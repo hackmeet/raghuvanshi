@@ -149,7 +149,7 @@ def create_pdf():
     header_data = [
         [
             Paragraph("RAGHUVANSHI", title_style),
-            Paragraph("<b>Mobile:</b> +91 98252-61590<br/><b>Email:</b> raghuvanshikhaman@gmail.com", header_right_style)
+            Paragraph("<b>Sandeep Thakker:</b> +91 98252-61590<br/><b>Jeet Thakkar:</b> +91 96382-27370", header_right_style)
         ],
         [
             Paragraph("Khaman House &amp; Lassi Centre", subtitle_style),
@@ -177,20 +177,18 @@ def create_pdf():
     story.append(Spacer(1, 15))
     
     # About Section
-    story.append(Paragraph("CUSTOM FOOD PACK SOLUTIONS", h1_style))
+    story.append(Paragraph("BULK ORDER MENU", h1_style))
     story.append(Paragraph(
-        "Raghuvanshi Khaman House &amp; Lassi Centre is Silvassa's premier food brand, "
-        "renowned for serving fresh, authentic snack platters and premium chilled beverages. "
-        "We specialize in providing high-volume bulk meal boxes for corporate offices, "
-        "industrial staff, training meetings, and family functions. "
-        "Our focus is simple: 100% vegetarian recipes, absolute hygiene, and authentic home-style flavors.",
+        "Raghuvanshi Khaman House makes it easy to serve fresh, hot snacks to your guests. "
+        "Whether it is an office meeting, a morning breakfast, or a society function, we provide "
+        "ready-to-eat boxes packed with our famous snacks. 100% vegetarian, made fresh the same day.",
         body_style
     ))
     
     # Veg Badge Card
     veg_card_data = [
         [
-            Paragraph("<b>100% PURE VEGETARIAN SNAP-PACKS</b>", ParagraphStyle('VegTitle', parent=body_bold_style, textColor=ACCENT_GREEN)),
+            Paragraph("<b>100% PURE VEG SNACK BOXES</b>", ParagraphStyle('VegTitle', parent=body_bold_style, textColor=ACCENT_GREEN)),
             Paragraph("[  VEG  ]", veg_tag_style)
         ]
     ]
@@ -208,12 +206,10 @@ def create_pdf():
     story.append(veg_card_table)
     story.append(Spacer(1, 15))
     
-    # Editorial Legacy Storytelling Quote Box (Wordings: generic Khaman and Lassi)
+    # Editorial Legacy Storytelling Quote Box
     story_box_data = [[
         Paragraph(
-            "\"At half past five, long before the first rays touch Silvassa, our steamers are already firing. "
-            "Our besan is whisked by hand, and our sweet thick curd is blended with traditional flavors. We prepare "
-            "every batch with care and serve it all-day. No shortcuts, just pure love for taste.\"",
+            "\"We prepare every batch with care and pack it hot. No shortcuts, just pure love for taste.\"",
             story_box_style
         )
     ]]
@@ -230,22 +226,22 @@ def create_pdf():
     story.append(Spacer(1, 20))
     
     # Platter Section
-    story.append(Paragraph("1. COMPACT 3-COMPARTMENT MEAL PLATTER", h1_style))
-    story.append(Paragraph("<b>Corporate Package Price:</b> &#8377;90 per plate (Minimum Order Quantity: 20 Plates)", body_style))
-    story.append(Paragraph("A balanced individual pack containing a fresh main farsan, a hot fried snack, and a signature sweet.", body_style))
+    story.append(Paragraph("1. MORNING BREAKFAST BOX (3 ITEMS)", h1_style))
+    story.append(Paragraph("<b>Price:</b> &#8377;90 per box (Minimum Order: 20 Boxes)", body_style))
+    story.append(Paragraph("A fresh and simple snack box, perfect for morning tea.", body_style))
     story.append(Spacer(1, 5))
     
     # 3-Section Table
     three_sec_data = [
         [
-            Paragraph("Compartment 1: Gujarati Farsan (Select Any One)", table_header_style),
-            Paragraph("Compartment 2: Fried Savory (Select Any One)", table_header_style),
-            Paragraph("Compartment 3: Sweets &amp; Drinks (Select Any One)", table_header_style)
+            Paragraph("Hot Farsan (Choose 1)", table_header_style),
+            Paragraph("Fried Snack (Choose 1)", table_header_style),
+            Paragraph("Sweet / Drink (Choose 1)", table_header_style)
         ],
         [
-            Paragraph("• Nylon Khaman (3 pcs)<br/>• Idada / White Dhokla (4 pcs)<br/>• Sev Khamani (Portion)<br/>• Special Khandvi (4 pcs)<br/>• Patra (4 pcs)", table_cell_style),
-            Paragraph("• Spiced Veg Samosa (1 pc)<br/>• Chinese Samosa (1 pc)<br/>• Crispy Spring Roll (1 pc)<br/>• Crunchy Gathiya (Portion)", table_cell_style),
-            Paragraph("• Golden Sweet Jalebi (2 pcs)<br/>• Gulab Jamun (1 large pc)<br/>• Rich Mango Lassi (Small cup)<br/>• Chilled Sweet Lassi (Small cup)", table_cell_style)
+            Paragraph("• Nylon Khaman<br/>• White Dhokla<br/>• Sev Khamni<br/>• Khandvi<br/>• Patra", table_cell_style),
+            Paragraph("• Veg Samosa<br/>• Chinese Samosa", table_cell_style),
+            Paragraph("• Motichoor Ladoo (Orange)<br/>• Mango Lassi<br/>• Sweet Lassi", table_cell_style)
         ]
     ]
     three_sec_table = Table(three_sec_data, colWidths=[180, 180, 180])
@@ -266,10 +262,10 @@ def create_pdf():
     # Ordering Note / Footer of Page 1
     note_box_data = [[
         Paragraph(
-            "<b>Catering Terms:</b><br/>"
-            "• Please place all orders at least 24 hours prior to delivery.<br/>"
-            "• We support full GST billing (GST invoice will be sent to your corporate email).<br/>"
-            "• Food-grade biodegradable packaging is used for all custom packets.",
+            "<b>Important Details:</b><br/>"
+            "• Please tell us 1-2 days before so we can keep your order ready.<br/>"
+            "• We can give you a proper bill with GST if you need it for your office.<br/>"
+            "• Everything is packed neatly in good quality boxes.",
             note_style
         )
     ]]
@@ -293,36 +289,32 @@ def create_pdf():
     story.append(bar_table)
     story.append(Spacer(1, 15))
     
-    story.append(Paragraph("2. EXECUTIVE 5-COMPARTMENT PLATTER", h1_style))
-    story.append(Paragraph("<b>Corporate Package Price:</b> &#8377;160 per plate (Minimum Order Quantity: 20 Plates)", body_style))
-    story.append(Paragraph("Our flagship executive platter designed for client lunches and formal corporate meetings.", body_style))
+    story.append(Paragraph("2. SPECIAL FUNCTION BOX (4 ITEMS)", h1_style))
+    story.append(Paragraph("<b>Price:</b> &#8377;160 per box (Minimum Order: 20 Boxes)", body_style))
+    story.append(Paragraph("A heavy, satisfying snack box for evening functions or big parties.", body_style))
     story.append(Spacer(1, 5))
     
-    # 5-Section Table
+    # 4-Section Table
     five_sec_data = [
         [
             Paragraph("Category", table_header_style),
-            Paragraph("Item Selections &amp; Portions (Includes Green &amp; Garlic Chutneys)", table_header_style)
+            Paragraph("Item Options (Chutney included)", table_header_style)
         ],
         [
-            Paragraph("<b>Compartment 1</b><br/>Gujarati Farsan", table_cell_bold),
-            Paragraph("Select One: Nylon Khaman (3 pcs) / Idada (4 pcs) / Sev Khamani (Portion) / Khandvi (4 pcs)", table_cell_style)
+            Paragraph("<b>Item 1</b><br/>Soft Farsan", table_cell_bold),
+            Paragraph("Choose 1: Nylon Khaman / White Dhokla / Sev Khamni / Khandvi", table_cell_style)
         ],
         [
-            Paragraph("<b>Compartment 2</b><br/>Fried Snack", table_cell_bold),
-            Paragraph("Select One: Special Veg Samosa (1 pc) / Crispy Spring Roll (1 pc) / Chinese Samosa (1 pc)", table_cell_style)
+            Paragraph("<b>Item 2</b><br/>Fried Snack", table_cell_bold),
+            Paragraph("Choose 1: Veg Samosa / Chinese Samosa / Coconut Petis", table_cell_style)
         ],
         [
-            Paragraph("<b>Compartment 3</b><br/>Gujarati Side", table_cell_bold),
-            Paragraph("Select One: Soft Thepla with Pickles (2 pcs) / Steamed Patra (4 pcs) / Gathiya Bowl", table_cell_style)
+            Paragraph("<b>Item 3</b><br/>Sweet", table_cell_bold),
+            Paragraph("Choose 1: Motichoor Ladoo (Orange)", table_cell_style)
         ],
         [
-            Paragraph("<b>Compartment 4</b><br/>Sweets", table_cell_bold),
-            Paragraph("Select One: Gulab Jamun (1 pc) / Sweet Jalebi (3 pcs) / Traditional Rasgulla (1 pc)", table_cell_style)
-        ],
-        [
-            Paragraph("<b>Compartment 5</b><br/>Chilled Drink", table_cell_bold),
-            Paragraph("Select One: Thick Mango Lassi (Medium cup) / Traditional Sweet Lassi / Spiced Masala Chhas", table_cell_style)
+            Paragraph("<b>Item 4</b><br/>Drink", table_cell_bold),
+            Paragraph("Choose 1: Mango Lassi / Sweet Lassi / Masala Buttermilk", table_cell_style)
         ]
     ]
     five_sec_table = Table(five_sec_data, colWidths=[140, 400])
@@ -344,10 +336,9 @@ def create_pdf():
     # Call to Action Block
     cta_data = [[
         Paragraph(
-            "<font color='#ffffff'><b>READY TO ORDER A PACKET FOR YOUR EVENT?</b></font><br/>"
-            "<font color='#fce6d8'>Click the 'Request a Corporate Quote' button on our website, fill out your inquiry, "
-            "and send it to us via WhatsApp. Alternatively, call us directly at <b>+91 98252-61590</b>. "
-            "We will return a customized proposal within 2 hours.</font>",
+            "<font color='#ffffff'><b>READY TO BOOK YOUR ORDER?</b></font><br/>"
+            "<font color='#fce6d8'>Click the 'Ask for the Rate' button on our website, or just message us on WhatsApp with your date and total boxes. "
+            "You can also call Sandeep at <b>+91 98252-61590</b> or Jeet at <b>+91 96382-27370</b>.</font>",
             ParagraphStyle('CTAText', parent=body_style, textColor=colors.white)
         )
     ]]
