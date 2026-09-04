@@ -619,50 +619,6 @@ function setupReopeningModal() {
   };
 }
 
-window.openCorporateModal = function () {
-  document.getElementById('corporate-modal').classList.add('active');
-};
-
-window.closeCorporateModal = function () {
-  document.getElementById('corporate-modal').classList.remove('active');
-  document.getElementById('corporate-form').reset();
-};
-
-window.submitCorporateInquiry = function (event) {
-  event.preventDefault();
-  const name = document.getElementById('corp-name').value.trim();
-  const contact = document.getElementById('corp-contact').value.trim();
-  const phone = document.getElementById('corp-phone').value.trim();
-  const packs = document.getElementById('corp-packs').value;
-  const date = document.getElementById('corp-date').value;
-  const packageSel = document.getElementById('corp-package').value;
-  const remarks = document.getElementById('corp-remarks').value.trim();
-
-  let formattedDate = date;
-  if (date) {
-    const dateObj = new Date(date);
-    if (!isNaN(dateObj.getTime())) {
-      formattedDate = dateObj.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
-    }
-  }
-
-  const whatsappNumber = '919825261590';
-  let messageText = `*Raghuvanshi Bulk Order*\n\n` +
-    `• *Company / Function:* ${name}\n` +
-    `• *Name:* ${contact}\n` +
-    `• *Phone:* ${phone}\n` +
-    `• *How Many People:* ${packs}\n` +
-    `• *Date Needed:* ${formattedDate}\n` +
-    `• *Package:* ${packageSel}\n`;
-
-  if (remarks) {
-    messageText += `• *Other Notes:* ${remarks}\n`;
-  }
-
-  window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(messageText)}`, '_blank');
-  closeCorporateModal();
-};
-
 function setupModalDismiss() {
   document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
     backdrop.addEventListener('click', (e) => {

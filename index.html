@@ -83,7 +83,7 @@
     <div class="mm-actions">
       <a href="tel:+919825261590" class="mm-call"><i class="fas fa-phone"></i> Sandeep (+91 98252-61590)</a>
       <a href="tel:+919638227370" class="mm-call" style="margin-top: 8px;"><i class="fas fa-phone"></i> Jeet (+91 96382-27370)</a>
-      <a href="https://maps.google.com/?q=13,+Perin+Complex,+Kilavni+Naka,+Silvassa" target="_blank" rel="noopener"
+      <a href="https://maps.google.com/?q=Raghuvanshi+Khaman,+Silvassa" target="_blank" rel="noopener"
         class="mm-map"><i class="fas fa-directions"></i> Get Directions</a>
     </div>
 
@@ -361,12 +361,17 @@
       </div>
 
       <div class="corp-actions reveal">
-        <button class="quote-btn" onclick="openCorporateModal()">
-          <i class="fas fa-file-invoice"></i> Ask for the Rate
-        </button>
+        <a href="https://wa.me/919825261590?text=Hi%20Raghuvanshi%20Khaman%21%20I%20would%20like%20to%20know%20the%20bulk%20order%20rates%20for%20an%20upcoming%20function." target="_blank" rel="noopener" class="quote-btn">
+          <i class="fab fa-whatsapp"></i> WhatsApp Sandeep
+        </a>
+        <a href="https://wa.me/919638227370?text=Hi%20Raghuvanshi%20Khaman%21%20I%20would%20like%20to%20know%20the%20bulk%20order%20rates%20for%20an%20upcoming%20function." target="_blank" rel="noopener" class="quote-btn">
+          <i class="fab fa-whatsapp"></i> WhatsApp Jeet
+        </a>
+        <!--
         <a href="documents/raghuvanshi_food_packets.pdf" download class="quote-btn secondary-quote-btn">
           <i class="fas fa-file-pdf"></i> Download Menu (PDF)
         </a>
+        -->
       </div>
 
       <p class="corp-note reveal">Tell us 1–2 days before and everything reaches you hot and fresh, made the same
@@ -431,7 +436,7 @@
               Perin Complex<br>Kilavni Naka, Silvassa — 396230 &nbsp;·&nbsp; All week, 8:30 AM to 9:00 PM</span>
           </div>
           <div class="visit-actions">
-            <a href="https://maps.google.com/?q=13,+Perin+Complex,+Kilavni+Naka,+Silvassa" target="_blank"
+            <a href="https://maps.google.com/?q=Raghuvanshi+Khaman,+Silvassa" target="_blank"
               rel="noopener" class="primary-cta">
               <i class="fas fa-directions"></i> Get Directions
             </a>
@@ -580,7 +585,7 @@
             </div>
           </div>
 
-          <a href="https://maps.google.com/?q=13,+Perin+Complex,+Kilavni+Naka,+Silvassa" target="_blank" rel="noopener"
+          <a href="https://maps.google.com/?q=Raghuvanshi+Khaman,+Silvassa" target="_blank" rel="noopener"
             class="map-btn">
             <i class="fas fa-directions"></i> Get Directions on Google Maps
           </a>
@@ -652,71 +657,9 @@
     </div>
   </div>
 
-  <!-- Corporate Inquiry Modal -->
-  <div class="modal-backdrop" id="corporate-modal">
-    <div class="modal-container" style="max-width: 500px;">
-      <div class="modal-header">
-        <h2>Bulk / Party Order</h2>
-        <button class="modal-close-btn" onclick="closeCorporateModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Fill this in and WhatsApp will open
-          with your message ready. Just press send — we will reply with the rate.</p>
-
-        <form id="corporate-form" onsubmit="submitCorporateInquiry(event)">
-          <div class="input-group">
-            <label for="corp-name">Office or Function Name <span style="color:var(--accent)">*</span></label>
-            <input type="text" id="corp-name" placeholder="e.g. office name, birthday, society programme" required>
-          </div>
-
-          <div class="input-group">
-            <label for="corp-contact">Your Name <span style="color:var(--accent)">*</span></label>
-            <input type="text" id="corp-contact" placeholder="Enter your full name" required>
-          </div>
-
-          <div class="row-inputs" style="display: flex; gap: 15px; margin-bottom: 15px;">
-            <div class="input-group" style="flex: 1; margin-bottom: 0;">
-              <label for="corp-phone">Phone Number <span style="color:var(--accent)">*</span></label>
-              <input type="tel" id="corp-phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-            </div>
-            <div class="input-group" style="flex: 1; margin-bottom: 0;">
-              <label for="corp-packs">How Many People <span style="color:var(--accent)">*</span></label>
-              <input type="number" id="corp-packs" placeholder="Minimum 20" min="20" required>
-            </div>
-          </div>
-
-          <div class="row-inputs" style="display: flex; gap: 15px; margin-bottom: 15px;">
-            <div class="input-group" style="flex: 1; margin-bottom: 0;">
-              <label for="corp-date">Date Needed <span style="color:var(--accent)">*</span></label>
-              <input type="date" id="corp-date" required>
-            </div>
-            <div class="input-group" style="flex: 1; margin-bottom: 0;">
-              <label for="corp-package">What Do You Need <span style="color:var(--accent)">*</span></label>
-              <select id="corp-package" required>
-                <option value="" disabled selected>Choose one</option>
-                <option value="Morning Breakfast Box">Morning Breakfast Box</option>
-                <option value="Tea Time Snacks">Tea Time Snacks</option>
-                <option value="Mix Order">Something Else (Tell Us Below)</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="input-group">
-            <label for="corp-remarks">Anything Else? (Optional)</label>
-            <textarea id="corp-remarks" rows="3"
-              placeholder="Extra lassi, less spicy, which items you want..."></textarea>
-          </div>
-
-          <button type="submit" class="announce-btn" style="width: 100%; margin-top: 15px;">
-            <i class="fab fa-whatsapp"></i> Send on WhatsApp
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <!-- Sticky invitation -->
-  <a href="https://maps.google.com/?q=13,+Perin+Complex,+Kilavni+Naka,+Silvassa" target="_blank" rel="noopener"
+  <a href="https://maps.google.com/?q=Raghuvanshi+Khaman,+Silvassa" target="_blank" rel="noopener"
     class="visit-fab" id="visit-fab">
     <i class="fas fa-store"></i>
     <span>Visit our shop<small>Kilavni Naka, Silvassa</small></span>
