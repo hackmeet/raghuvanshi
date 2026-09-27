@@ -121,6 +121,21 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
 
   `images/main-logo.jpeg` and `images/logo-trans.svg` are also unreferenced, but
   keep the first: it is the master the three logo files are generated from.
+- **Two photos are used twice** — `coconut_petis.webp` is also Farali Peties, and
+  `punjabi_samosa.webp` is also Chinese Samosa. Both pairs were byte-identical
+  from the first commit. Rather than source new pictures, the menu order in
+  `script.js` keeps each pair apart so they never land next to each other:
+
+  | | position | 1 col | 2 col | 3 col |
+  |---|---|---|---|---|
+  | Coconut Patties / Farali Peties | 6 and 10 | 4 apart | 2 rows | 2 rows |
+  | Mini Punjabi Samosa / Chinese Samosa | 3 and 8 | 5 apart | 2 rows | 2 rows |
+
+  A gap of four is not on its own enough: positions 4 and 8 in a three-column
+  grid land diagonally touching. **If you reorder the snacks, re-check that each
+  pair is at least two rows apart in all three layouts**, diagonals included.
+  Search results are the one place they can still appear together, because
+  "samosa" matches both.
 - **Menu photos** — every photo on the site is WebP at 720px wide, which is the
   widest any of them is ever displayed. They are served from `images/`, nothing
   is hot-linked. Where they came from is no longer certain: see the note at the

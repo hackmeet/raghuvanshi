@@ -22,13 +22,13 @@ const menuItems = [
     veg: true
   },
   {
-    id: 'khaman-sev',
-    name: 'Khaman & Sev',
+    id: 'punjabi-samosa',
+    name: 'Mini Punjabi Samosa',
     category: 'snacks',
-    description: 'Our soft khaman with a thick layer of crunchy nylon sev on top.',
-    price: 95,
+    description: 'Small crispy samosas filled with spiced potato and green peas.',
+    price: 90,
     unit: '250 gms',
-    image: 'images/khaman_sev.webp',
+    image: 'images/punjabi_samosa.webp',
     veg: true
   },
   {
@@ -53,13 +53,23 @@ const menuItems = [
     veg: true
   },
   {
-    id: 'punjabi-samosa',
-    name: 'Mini Punjabi Samosa',
+    id: 'coconut-patties',
+    name: 'Coconut Patties',
     category: 'snacks',
-    description: 'Small crispy samosas filled with spiced potato and green peas.',
-    price: 90,
+    description: 'Golden potato patties stuffed with sweet coconut, raisins and herbs.',
+    price: 120,
     unit: '250 gms',
-    image: 'images/punjabi_samosa.webp',
+    image: 'images/coconut_petis.webp',
+    veg: true
+  },
+  {
+    id: 'khaman-sev',
+    name: 'Khaman & Sev',
+    category: 'snacks',
+    description: 'Our soft khaman with a thick layer of crunchy nylon sev on top.',
+    price: 95,
+    unit: '250 gms',
+    image: 'images/khaman_sev.webp',
     veg: true
   },
   {
@@ -73,14 +83,15 @@ const menuItems = [
     veg: true
   },
   {
-    id: 'coconut-patties',
-    name: 'Coconut Patties',
+    id: 'sabudana-vada',
+    name: 'Sabudana Vada (Farali)',
     category: 'snacks',
-    description: 'Golden potato patties stuffed with sweet coconut, raisins and herbs.',
+    description: 'Crispy sabudana and potato vada with peanuts and cumin. Comes with green chutney.',
     price: 120,
-    unit: '250 gms',
-    image: 'images/coconut_petis.webp',
-    veg: true
+    unit: 'Plate',
+    image: 'images/farali_sabudana_wada.webp',
+    veg: true,
+    popular: true
   },
   {
     id: 'farali-peties',
@@ -92,19 +103,6 @@ const menuItems = [
     image: 'images/farali_petis.webp',
     veg: true
   },
-  {
-    id: 'sabudana-vada',
-    name: 'Sabudana Vada (Farali)',
-    category: 'snacks',
-    description: 'Crispy sabudana and potato vada with peanuts and cumin. Comes with green chutney.',
-    price: 120,
-    unit: 'Plate',
-    image: 'images/farali_sabudana_wada.webp',
-    veg: true,
-    popular: true
-  },
-
-  // Farsan (Dry Snacks)
   {
     id: 'jada-gathiya',
     name: 'Jada Gathiya',
@@ -135,16 +133,6 @@ const menuItems = [
     image: 'images/tikha_gathiya.webp',
     veg: true
   },
-  // {
-  //   id: 'tikhi-sev',
-  //   name: 'Tikhi Sev',
-  //   category: 'farsan',
-  //   description: 'Fine, crispy sev with garlic and red chilli. Nice and hot.',
-  //   price: 90,
-  //   unit: '250 gms',
-  //   image: 'images/nylon_sev.webp',
-  //   veg: true
-  // },
   {
     id: 'jada-sev',
     name: 'Jadi Sev',
@@ -165,16 +153,6 @@ const menuItems = [
     image: 'images/nylon_sev.webp',
     veg: true
   },
-  // {
-  //   id: 'nylon-sev-large',
-  //   name: 'Nylon Sev (Big Pack)',
-  //   category: 'farsan',
-  //   description: 'Our fine nylon sev in a bigger family pack.',
-  //   price: 120,
-  //   unit: '250 gms',
-  //   image: 'images/nylon_sev.webp',  // needs its own photo if re-enabled
-  //   veg: true
-  // },
   {
     id: 'wheat-chakri',
     name: 'Wheat Chakri',
@@ -235,8 +213,6 @@ const menuItems = [
     image: 'images/makai_chevdo.webp',
     veg: true
   },
-
-  // Lassi & Drinks
   {
     id: 'punjabi-lassi',
     name: 'Punjabi Lassi',
