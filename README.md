@@ -15,15 +15,18 @@ Whatever is in this folder is exactly what gets served.
 | `script.js` | Menu data, search/filter, mobile menu, scroll effects |
 | `images/` | Logo (SVG) and food photos (WebP) |
 | `CREDITS.md` | Photo licences — linked from the footer, please keep it |
-| `images/logo.svg` | The shop emblem (vector, scales to any size) |
-| `images/apple-touch-icon.png` | Home-screen icon for iPhones, made from the logo |
+| `images/logo.webp` | The shop emblem, 512x512 — header, hero, footer and 404 page |
+| `images/favicon.png` | Browser tab icon, 96x96 |
+| `images/apple-touch-icon.png` | Home-screen icon for iPhones, 180x180 |
 | `documents/` | The downloadable PDF menu |
 | `404.html` | Shown if someone opens a wrong link |
 | `.nojekyll`, `vercel.json`, `robots.txt` | Hosting config |
 
 `serve.js` is only for previewing on your own computer. It is not needed once the
-site is hosted. `generate_pdf.py`, `lijjat_menu.*` and `items/` are working files
-and are excluded from the deployment by `.gitignore`.
+site is hosted. `generate_pdf.py`, `items/` and `images/previous/` are working
+files. Nothing on the site links to them, but they **are** committed and do get
+uploaded to the host — `.gitignore` is a stock Next.js template and does not
+exclude them. Harmless, just untidy.
 
 ## Preview it on your computer
 
@@ -81,29 +84,57 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
 
 ## Things worth updating later
 
-- **Opening date** — currently "will be announced very soon", in the pop-up near
-  the bottom of `index.html` and in the last item of the About Us timeline.
+- **Opening date** — set to **Sunday, 11 October 2026**, the first day of
+  Navratri. It appears in five places in `index.html`: the two `teaser-badge`
+  labels and the `visit-address` line in the New Shop section, the last item of
+  the About Us timeline, the "Opening 11 October 2026" row in the Visit Us card,
+  and the `announce-info` line in the pop-up. The `og:`/`twitter:` descriptions
+  in `<head>` mention it too.
 - **Shop photos** — `images/shop_interior_1.webp` and `_2.webp` are deliberately
   blurred by CSS. Replace them with the real photos after the opening and remove
   the `filter: blur(...)` rule on `.teaser-img` in `style.css`.
-- **After the move** — once 18 & 19 is open, swap the "Open now / Opening soon"
-  address lines in the New Shop section and the Visit Us card over to the new
-  number, and update the Google Maps links.
-- **Facebook link** — the icon in the footer currently points to `#`.
+- **After the move** — once 18 & 19 is open, swap the "Open now / Opening
+  11 October 2026" address lines in the New Shop section and the Visit Us card
+  over to the new number, drop the two `teaser-badge` labels, and update the
+  Google Maps links.
+- **Social links** — the shop has no Facebook or Instagram page, so the footer
+  carries only Call, WhatsApp and Google Maps. If a page is ever made, add the
+  icon back next to those three in the `footer-socials` block.
+- **Share preview** — the `og:`/`twitter:`/`canonical` URLs in `<head>` are
+  absolute and hard-coded to `https://hackmeet.github.io/raghuvanshi/`. They must
+  be absolute or WhatsApp and Facebook will not show the preview image, so if the
+  site moves to a custom domain, update those five URLs.
 - **"Years in Silvassa" counter** — this works itself out from `data-since="1999"`
   on the stat in `index.html`, so it will read 28 in 2027 without anyone editing it.
   The year 1999 also appears in the page title, the hero, the About Us heading and
   the footer if it ever needs correcting.
+- **23 photos with no menu entry** — `images/` still holds photos for items that
+  are not in the menu list in `script.js`, so they never appear on the site:
+  banana wafer, chana chor, chana dal masala, dalmoth, farali chevdo, farsi puri,
+  fresh mango pickle, jira puri, khasta puri, khatta-mitha mix, methi puri (big
+  and small), methi sakarpara, potato wafer, ratlami sev, sakarpara, spendiyadi
+  mix, sweet lassi curd, tikha mix namkeen, tikhi papdi, tikhi sev, veg cutlet
+  and yellow banana wafer. Either add them to the menu list or delete the files.
 - **Menu photos** — the 27 item photos are free-licence stock from Wikimedia
   Commons and Openverse, downloaded into `images/` (nothing is hot-linked).
   17 of them ask for a credit, which is why `CREDITS.md` is linked in the footer.
   The best fix is to photograph the real items and save them over these files
   using the same names — then you can delete `CREDITS.md` and its footer link.
-- **Logo** — redrawn as a square badge so it stays sharp from a 38px header icon
-  up to any size, and so the header stops squashing it (the old one was 3:2 being
-  forced into a square). It is plain SVG, about 3 KB, and edits are just numbers
-  and colours in `images/logo.svg`. If you change it, regenerate the iPhone icon
-  by opening the logo at 180x180 on a cream background and saving a PNG.
-- The old logo is kept at `images/previous/logo-old.svg`.
-- The earlier artwork and the original `.png` files are in `images/previous/`.
-  Nothing was deleted; that folder is excluded from the deployment by `.gitignore`.
+- **Logo** — the master artwork is `images/main-logo.jpeg` (873x681). The three
+  files the site actually loads are generated from it, padded to a square on
+  white so the round CSS crop lands the same way:
+
+  | File | Size | Used for |
+  |---|---|---|
+  | `images/logo.webp` | 512x512 | header, hero, footer, 404 page |
+  | `images/favicon.png` | 96x96 | browser tab |
+  | `images/apple-touch-icon.png` | 180x180 | iPhone home screen |
+
+  If the artwork ever changes, regenerate all three from the new master rather
+  than editing them one by one.
+
+  `images/logo.svg` is an old auto-trace of the same artwork — 2531 paths and
+  **1.15 MB**, which every visitor was downloading just to draw a 48px header
+  icon. Nothing links to it any more; it can be deleted.
+- The old logo is kept at `images/previous/logo-old.svg`, and the earlier artwork
+  and original `.png` files are in `images/previous/`. Nothing was deleted.

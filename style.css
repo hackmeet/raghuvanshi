@@ -449,6 +449,9 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
+  /* The badge comes before .teaser-img-wrapper and .teaser-overlay in the markup,
+     and all three are positioned, so without this it paints underneath them. */
+  z-index: 2;
   background-color: var(--accent);
   color: white;
   padding: 8px 16px;
