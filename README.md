@@ -16,7 +16,8 @@ Whatever is in this folder is exactly what gets served.
 | `images/` | Logo and food photos, all WebP |
 | `CREDITS.md` | Photo licences, linked from the footer. **Out of date, see the note at the top of it** |
 | `images/logo.webp` | The shop emblem, 512x512, used in the header, hero, footer and 404 page |
-| `images/share-preview.jpg` | 1200x630 image for WhatsApp and Facebook link previews |
+| `images/share-logo.jpg` | 1200x630 logo card. The WhatsApp / Facebook / Twitter link preview |
+| `images/share-preview.jpg` | 1200x630 khaman photo. The JSON-LD `image`, which Google uses for rich results |
 | `images/favicon.png` | Browser tab icon, 96x96 |
 | `images/apple-touch-icon.png` | Home-screen icon for iPhones, 180x180 |
 | `documents/` | The downloadable PDF menu |
