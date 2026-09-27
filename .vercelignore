@@ -1,0 +1,11 @@
+# Working files. They stay in the repo, they just do not need to be uploaded
+# or served: nothing on the site links to any of them. Saves about 4.3 MB
+# per deploy.
+items/
+images/previous/
+generate_pdf.py
+serve.js
+
+# Notes for whoever maintains the site, not part of it. CREDITS.md is NOT
+# listed here on purpose: the footer links to it.
+README.md
