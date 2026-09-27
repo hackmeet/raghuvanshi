@@ -3087,3 +3087,19 @@ footer {
 .skip-link:focus {
   left: 0;
 }
+
+/* Highlighted date in the announcement. <mark> is the right element for it,
+   but its default browser yellow does not belong here, so it is restyled in
+   the shop's amber. */
+.date-mark {
+  background-color: rgba(255, 111, 0, 0.15);
+  /* --accent, not --primary-hover: the saffron only reached 3.09:1 against this
+     amber wash, which is under the 4.5 needed for text this size. */
+  color: var(--accent);
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
