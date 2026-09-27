@@ -7,7 +7,7 @@ const menuItems = [
     description: 'Soft, spongy and light. Steamed besan with mustard seeds, curry leaves and green chilli.',
     price: 85,
     unit: '250 gms',
-    image: 'images/khaman.jpeg',
+    image: 'images/khaman.webp',
     veg: true,
     popular: true
   },
@@ -18,7 +18,7 @@ const menuItems = [
     description: 'Soft white dhokla made from rice and dal. Light on the stomach, with black pepper and coriander.',
     price: 85,
     unit: '250 gms',
-    image: 'images/white_dhokla.jpeg',
+    image: 'images/white_dhokla.webp',
     veg: true
   },
   {
@@ -38,7 +38,7 @@ const menuItems = [
     description: 'Crumbled khaman mixed with garlic, green chilli and masala. Topped with pomegranate and sev.',
     price: 105,
     unit: '250 gms',
-    image: 'images/sev_khamni.jpeg',
+    image: 'images/sev_khamni.webp',
     veg: true,
     popular: true
   },
@@ -49,7 +49,7 @@ const menuItems = [
     description: 'Soft besan rolls with a light buttermilk tang, topped with coconut and mustard seeds.',
     price: 100,
     unit: '250 gms',
-    image: 'images/khandvi.jpeg',
+    image: 'images/khandvi.webp',
     veg: true
   },
   {
@@ -59,7 +59,7 @@ const menuItems = [
     description: 'Small crispy samosas filled with spiced potato and green peas.',
     price: 90,
     unit: '250 gms',
-    image: 'images/punjabi_samosa.jpeg',
+    image: 'images/punjabi_samosa.webp',
     veg: true
   },
   {
@@ -69,7 +69,7 @@ const menuItems = [
     description: 'Crispy samosas filled with spicy noodles and veggies. Kids love these.',
     price: 110,
     unit: '250 gms',
-    image: 'images/chinese_samosa.jpeg',
+    image: 'images/chinese_samosa.webp',
     veg: true
   },
   {
@@ -79,7 +79,7 @@ const menuItems = [
     description: 'Golden potato patties stuffed with sweet coconut, raisins and herbs.',
     price: 120,
     unit: '250 gms',
-    image: 'images/coconut_petis.jpeg',
+    image: 'images/coconut_petis.webp',
     veg: true
   },
   {
@@ -89,7 +89,7 @@ const menuItems = [
     description: 'Upvas special. Potato balls stuffed with coconut, cashew and raisins.',
     price: 120,
     unit: '250 gms',
-    image: 'images/farali_petis.jpeg',
+    image: 'images/farali_petis.webp',
     veg: true
   },
   {
@@ -99,7 +99,7 @@ const menuItems = [
     description: 'Crispy sabudana and potato vada with peanuts and cumin. Comes with green chutney.',
     price: 120,
     unit: 'Plate',
-    image: 'images/farali_sabudana_wada.jpeg',
+    image: 'images/farali_sabudana_wada.webp',
     veg: true,
     popular: true
   },
@@ -112,7 +112,7 @@ const menuItems = [
     description: 'Thick, crunchy besan gathiya. Best with hot tea or pickle.',
     price: 120,
     unit: '250 gms',
-    image: 'images/jada_gathiya.jpeg',
+    image: 'images/jada_gathiya.webp',
     veg: true
   },
   {
@@ -122,7 +122,7 @@ const menuItems = [
     description: 'Light, soft gathiya in Bhavnagar style. Mild, not spicy.',
     price: 120,
     unit: '250 gms',
-    image: 'images/bhavnagri_gathiya.jpeg',
+    image: 'images/bhavnagri_gathiya.webp',
     veg: true
   },
   {
@@ -132,7 +132,7 @@ const menuItems = [
     description: 'Crispy gathiya with red chilli and masala. For those who like it spicy.',
     price: 120,
     unit: '250 gms',
-    image: 'images/tikha_gathiya.jpeg',
+    image: 'images/tikha_gathiya.webp',
     veg: true
   },
   // {
@@ -152,7 +152,7 @@ const menuItems = [
     description: 'Thick sev with black pepper and ajwain.',
     price: 120,
     unit: '250 gms',
-    image: 'images/jadi_sev.jpeg',
+    image: 'images/jadi_sev.webp',
     veg: true
   },
   {
@@ -162,7 +162,7 @@ const menuItems = [
     description: 'Very fine, crispy golden sev. Eat as is or sprinkle on anything.',
     price: 50,
     unit: '100 gms',
-    image: 'images/nylon_sev.jpeg',
+    image: 'images/nylon_sev.webp',
     veg: true
   },
   // {
@@ -172,7 +172,7 @@ const menuItems = [
   //   description: 'Our fine nylon sev in a bigger family pack.',
   //   price: 120,
   //   unit: '250 gms',
-  //   image: 'images/nylon_sev_large.webp',
+  //   image: 'images/nylon_sev.webp',  // needs its own photo if re-enabled
   //   veg: true
   // },
   {
@@ -182,7 +182,7 @@ const menuItems = [
     description: 'Crunchy wheat chakri with sesame and spices.',
     price: 120,
     unit: '250 gms',
-    image: 'images/chakri.jpeg',
+    image: 'images/chakri.webp',
     veg: true
   },
   {
@@ -192,7 +192,7 @@ const menuItems = [
     description: 'Small flaky kachoris filled with sweet-spicy dal and dry fruit.',
     price: 120,
     unit: '250 gms',
-    image: 'images/dry_kachori.jpeg',
+    image: 'images/dry_kachori.webp',
     veg: true
   },
   {
@@ -222,7 +222,7 @@ const menuItems = [
     description: 'Crunchy masala-coated peanuts. Perfect with a glass of lassi.',
     price: 120,
     unit: '250 gms',
-    image: 'images/shing_bhujia.jpeg',
+    image: 'images/shing_bhujia.webp',
     veg: true
   },
   {
@@ -232,7 +232,7 @@ const menuItems = [
     description: 'Sweet and salty cornflake mix with peanuts, cashew, raisins and curry leaves.',
     price: 120,
     unit: '250 gms',
-    image: 'images/makai_chevdo.jpeg',
+    image: 'images/makai_chevdo.webp',
     veg: true
   },
 
@@ -244,7 +244,7 @@ const menuItems = [
     description: 'Thick, chilled sweet lassi with a layer of fresh malai on top.',
     price: 60,
     unit: '200 ml',
-    image: 'images/punjabi_lassi.jpeg',
+    image: 'images/punjabi_lassi.webp',
     veg: true,
     popular: true
   },
@@ -255,7 +255,7 @@ const menuItems = [
     description: 'Thick sweet lassi blended with Alphonso mango.',
     price: 70,
     unit: '200 ml',
-    image: 'images/mango_lassi.jpeg',
+    image: 'images/mango_lassi.webp',
     veg: true,
     popular: true
   },
@@ -266,7 +266,7 @@ const menuItems = [
     description: 'Light masala buttermilk with green chilli, ginger, cumin and coriander.',
     price: 50,
     unit: '650 ml',
-    image: 'images/buttermilk.jpeg',
+    image: 'images/buttermilk.webp',
     veg: true
   }
 ];
@@ -292,7 +292,7 @@ function renderMenu(itemsToRender) {
   if (itemsToRender.length === 0) {
     menuGrid.innerHTML = `
       <div class="no-results">
-        <i class="fas fa-search"></i>
+        <i class="icon"><svg><use href="#i-magnifying-glass"></use></svg></i>
         <p>Nothing matched that. Try another name, or tap "All Items".</p>
       </div>
     `;
@@ -323,7 +323,7 @@ function renderMenu(itemsToRender) {
   });
 }
 
-/* Step 02 — the three plates that leave the counter first. */
+/* Step 02: the three plates that leave the counter first. */
 function renderSignatures() {
   const grid = document.getElementById('signature-grid');
   if (!grid) return;
@@ -352,7 +352,7 @@ function renderSignatures() {
   }).join('');
 }
 
-/* Step 04 — a sample off the Suko Nasto shelf. */
+/* Step 04: a sample off the Suko Nasto shelf. */
 function renderNastoStrip() {
   const strip = document.getElementById('nasto-strip');
   if (!strip) return;
@@ -608,27 +608,55 @@ function setupMobileMenu() {
 /* -------------------------------------------------------------------------
    Modals
    ------------------------------------------------------------------------- */
+/* The announcement is shown once per visitor, not on every page load. The key
+   carries the opening date, so changing that date brings the pop-up back for
+   everyone who has already dismissed the old one. */
+const REOPENING_KEY = 'raghuvanshi-reopening-2026-10-11';
+
+/* Safari in private mode throws on localStorage, so never let it break the page. */
+function announcementSeen() {
+  try {
+    return localStorage.getItem(REOPENING_KEY) === 'seen';
+  } catch (e) {
+    return false;
+  }
+}
+
+function closeModal(modal) {
+  modal.classList.remove('active');
+  if (modal.id === 'reopening-modal') {
+    try {
+      localStorage.setItem(REOPENING_KEY, 'seen');
+    } catch (e) {
+      /* Nothing to remember it with. The pop-up simply shows again next time. */
+    }
+  }
+}
+
 function setupReopeningModal() {
   const modal = document.getElementById('reopening-modal');
+  window.dismissReopening = function () { };
   if (!modal) return;
 
-  setTimeout(() => modal.classList.add('active'), 1200);
+  if (announcementSeen()) {
+    modal.remove();
+    return;
+  }
 
-  window.dismissReopening = function () {
-    modal.classList.remove('active');
-  };
+  setTimeout(() => modal.classList.add('active'), 1200);
+  window.dismissReopening = function () { closeModal(modal); };
 }
 
 function setupModalDismiss() {
   document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
     backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.classList.remove('active');
+      if (e.target === backdrop) closeModal(backdrop);
     });
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-backdrop.active').forEach(m => m.classList.remove('active'));
+      document.querySelectorAll('.modal-backdrop.active').forEach(closeModal);
     }
   });
 }

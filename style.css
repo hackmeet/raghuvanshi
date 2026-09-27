@@ -1,6 +1,26 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700&display=swap');
 
+/* Icons.
+   Every icon is an <i class="icon"> holding an <svg><use href="#i-name"></svg>
+   that points at the sprite near the top of index.html. The <i> wrapper is what
+   the rest of this file already styles (colour, font-size, width, margins), so
+   sizing the svg in em keeps all of those rules working: font-size still scales
+   the icon and color still paints it, exactly as the old webfont glyphs did. */
+.icon {
+  display: inline-block;
+  line-height: 1;
+}
+
+.icon svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+  /* No preserveAspectRatio override: the wider glyphs stay in proportion
+     inside the 1em box instead of being squashed to a square. */
+}
+
 /* CSS Variables */
 :root {
   --primary: #FF6F00;       /* Rich Amber Saffron */
@@ -1597,7 +1617,7 @@ footer {
 }
 
 /* ==========================================================================
-   LAYOUT LAYER — MOBILE FIRST
+   LAYOUT LAYER · MOBILE FIRST
    Base rules below target a phone (~360-430px). Larger screens are additive,
    via min-width queries only. Nothing here assumes a mouse or a wide viewport.
    Breakpoints:  sm 600px (large phone) · md 800px (tablet) · lg 1080px (desktop)
@@ -1774,7 +1794,7 @@ header.on-deep .nav-toggle span { background: #FFF3E4; }
 body.menu-open { overflow: hidden; }
 
 /* --------------------------------------------------------------------------
-   STEP RAIL — desktop affordance only, hidden on touch-sized screens
+   STEP RAIL: desktop affordance only, hidden on touch-sized screens
    -------------------------------------------------------------------------- */
 .step-rail { display: none; }
 
@@ -2053,7 +2073,7 @@ body.menu-open { overflow: hidden; }
   object-fit: cover;
 }
 
-/* The label crowds the picture at phone size — it returns on wider screens */
+/* The label crowds the picture at phone size, it returns on wider screens */
 .hv-tag { display: none; }
 
 .hv-small {
@@ -2580,7 +2600,7 @@ footer {
 .social-circle { width: 46px; height: 46px; }
 
 /* --------------------------------------------------------------------------
-   STICKY "VISIT US" BAR — a phone-width action bar, a pill on desktop
+   STICKY "VISIT US" BAR: a phone-width action bar, a pill on desktop
    -------------------------------------------------------------------------- */
 .visit-fab {
   position: fixed;
@@ -2646,7 +2666,7 @@ footer {
 }
 
 /* ==========================================================================
-   sm — larger phones and up (600px)
+   sm: larger phones and up (600px)
    ========================================================================== */
 @media (min-width: 600px) {
   .hero-section, .story-block { padding: 72px 22px 80px; }
@@ -2700,7 +2720,7 @@ footer {
 }
 
 /* ==========================================================================
-   md — tablets (800px)
+   md: tablets (800px)
    ========================================================================== */
 @media (min-width: 800px) {
   .hero-section, .story-block { padding: 88px 24px 96px; }
@@ -2726,7 +2746,7 @@ footer {
 }
 
 /* ==========================================================================
-   lg — desktop (1080px): full nav, side rail, two-column hero
+   lg: desktop (1080px), full nav, side rail, two-column hero
    ========================================================================== */
 @media (min-width: 1080px) {
   .hero-section, .story-block { padding: 96px 20px 104px; }
@@ -2763,7 +2783,7 @@ footer {
   }
 
   .hero-eyebrow, .hero-title, .hero-lead, .hero-ctas, .hero-facts { grid-column: 1; }
-  /* A grid item stretches by default — keep the pill hugging its text */
+  /* A grid item stretches by default, keep the pill hugging its text */
   .hero-eyebrow { justify-self: start; }
 
   .hero-visual {
@@ -2913,7 +2933,7 @@ footer {
 }
 
 /* The container caps at 1150px, so a wider window gives the nav no extra
-   room — loosening it here would only squeeze the logo. */
+   room, loosening it here would only squeeze the logo. */
 .logo-text-col { overflow: hidden; }
 
 /* Keep the location rows aligned whatever the icon glyph width */

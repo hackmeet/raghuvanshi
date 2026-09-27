@@ -13,9 +13,10 @@ Whatever is in this folder is exactly what gets served.
 | `index.html` | The whole page |
 | `style.css` | All styling (mobile-first) |
 | `script.js` | Menu data, search/filter, mobile menu, scroll effects |
-| `images/` | Logo (SVG) and food photos (WebP) |
-| `CREDITS.md` | Photo licences — linked from the footer, please keep it |
-| `images/logo.webp` | The shop emblem, 512x512 — header, hero, footer and 404 page |
+| `images/` | Logo and food photos, all WebP |
+| `CREDITS.md` | Photo licences, linked from the footer. **Out of date, see the note at the top of it** |
+| `images/logo.webp` | The shop emblem, 512x512, used in the header, hero, footer and 404 page |
+| `images/share-preview.jpg` | 1200x630 image for WhatsApp and Facebook link previews |
 | `images/favicon.png` | Browser tab icon, 96x96 |
 | `images/apple-touch-icon.png` | Home-screen icon for iPhones, 180x180 |
 | `documents/` | The downloadable PDF menu |
@@ -25,7 +26,7 @@ Whatever is in this folder is exactly what gets served.
 `serve.js` is only for previewing on your own computer. It is not needed once the
 site is hosted. `generate_pdf.py`, `items/` and `images/previous/` are working
 files. Nothing on the site links to them, but they **are** committed and do get
-uploaded to the host — `.gitignore` is a stock Next.js template and does not
+uploaded to the host. `.gitignore` is a stock Next.js template and does not
 exclude them. Harmless, just untidy.
 
 ## Preview it on your computer
@@ -108,18 +109,23 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   on the stat in `index.html`, so it will read 28 in 2027 without anyone editing it.
   The year 1999 also appears in the page title, the hero, the About Us heading and
   the footer if it ever needs correcting.
-- **23 photos with no menu entry** — `images/` still holds photos for items that
+- **24 photos with no menu entry** — `images/` still holds photos for items that
   are not in the menu list in `script.js`, so they never appear on the site:
   banana wafer, chana chor, chana dal masala, dalmoth, farali chevdo, farsi puri,
   fresh mango pickle, jira puri, khasta puri, khatta-mitha mix, methi puri (big
-  and small), methi sakarpara, potato wafer, ratlami sev, sakarpara, spendiyadi
-  mix, sweet lassi curd, tikha mix namkeen, tikhi papdi, tikhi sev, veg cutlet
-  and yellow banana wafer. Either add them to the menu list or delete the files.
-- **Menu photos** — the 27 item photos are free-licence stock from Wikimedia
-  Commons and Openverse, downloaded into `images/` (nothing is hot-linked).
-  17 of them ask for a credit, which is why `CREDITS.md` is linked in the footer.
-  The best fix is to photograph the real items and save them over these files
-  using the same names — then you can delete `CREDITS.md` and its footer link.
+  and small), methi sakarpara, petis, potato wafer, ratlami sev, sakarpara,
+  spendiyadi mix, sweet lassi curd, tikha mix namkeen, tikhi papdi, tikhi sev,
+  veg cutlet and yellow banana wafer. That is 3.1 MB uploaded on every deploy for
+  nothing. Either add them to the menu list or delete the files.
+
+  `images/main-logo.jpeg` and `images/logo-trans.svg` are also unreferenced, but
+  keep the first: it is the master the three logo files are generated from.
+- **Menu photos** — every photo on the site is WebP at 720px wide, which is the
+  widest any of them is ever displayed. They are served from `images/`, nothing
+  is hot-linked. Where they came from is no longer certain: see the note at the
+  top of `CREDITS.md`. The best fix is to photograph the real items, save them
+  over these files using the same names, and then delete `CREDITS.md` and its
+  footer link.
 - **Logo** — the master artwork is `images/main-logo.jpeg` (873x681). The three
   files the site actually loads are generated from it, padded to a square on
   white so the round CSS crop lands the same way:
@@ -133,8 +139,25 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   If the artwork ever changes, regenerate all three from the new master rather
   than editing them one by one.
 
-  `images/logo.svg` is an old auto-trace of the same artwork — 2531 paths and
-  **1.15 MB**, which every visitor was downloading just to draw a 48px header
-  icon. Nothing links to it any more; it can be deleted.
+  There used to be an `images/logo.svg`: an auto-trace of the same artwork,
+  2531 paths and 1.15 MB, which every visitor downloaded just to draw a 48px
+  header icon. It has been deleted.
 - The old logo is kept at `images/previous/logo-old.svg`, and the earlier artwork
   and original `.png` files are in `images/previous/`. Nothing was deleted.
+- **Icons** — there is no icon font and no CDN. Every icon is an
+  `<i class="icon">` wrapping `<svg><use href="#i-name"></svg>`, pointing at the
+  sprite near the top of `<body>` in `index.html`. The `<i>` wrapper is what
+  `style.css` already styled, so `color` and `font-size` still control the icons
+  exactly as they did with the webfont. To add one, drop a new `<symbol>` into
+  the sprite and reference its id. The glyphs are Font Awesome Free 6.4.0
+  (CC BY 4.0), which is why the sprite carries a licence comment. Loading these
+  22 icons as a webfont from cdnjs used to cost 272 KB.
+- **The announcement pop-up** — `script.js` shows it once per visitor and stores
+  a flag in `localStorage` under `raghuvanshi-reopening-2026-10-11`. The opening
+  date is part of that key on purpose: change the date and everyone who dismissed
+  the old announcement sees the new one. Change `REOPENING_KEY` to match.
+- **Structured data** — the `application/ld+json` block at the end of `<head>`
+  is what lets Google show the address, hours and a call button in search
+  results. Keep it in step with the address and hours in the page. It carries no
+  rating, price range or map coordinates, because those were not known; add them
+  only from real data.

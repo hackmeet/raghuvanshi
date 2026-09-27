@@ -1,6 +1,19 @@
 # Photo credits
 
-Every menu photo is downloaded and served from this repository — nothing is
+> **This list needs checking before it can be relied on.**
+>
+> At some point the menu photos were replaced. The site used to show the `.webp`
+> files named below; it was later switched to a different set of `.jpeg` photos of
+> the same items, and those have now been converted back to `.webp` under the same
+> names. So a filename in this list may no longer hold the photograph credited
+> next to it, and the photos actually on the site have no recorded source.
+>
+> Nobody should assume the attribution below is correct until someone confirms
+> where the current photos came from. If they are your own photographs of the real
+> items, this whole page can be deleted along with the "Photo credits" link in the
+> footer of `index.html`. That is the better fix anyway.
+
+Every menu photo is downloaded and served from this repository, nothing is
 hot-linked, so no outside service can go down or swap a picture on us.
 
 **10 photos** are CC0 or public domain and need no credit.
@@ -8,7 +21,7 @@ hot-linked, so no outside service can go down or swap a picture on us.
 which is what this page is for.
 
 > If you would rather not carry credits at all, photograph the real items and
-> drop them in over these files — same filenames, nothing else to change. Your
+> drop them in over these files, same filenames, nothing else to change. Your
 > own food will look better than stock anyway.
 
 ## Photos that need a credit
@@ -35,16 +48,16 @@ which is what this page is for.
 
 ## Public domain / CC0 (no credit needed)
 
-- `chinese_samosa.webp` — A white leaf-patterned plate with golden fried snacks like bhajias and a samosa, served with tomato ketchup on a blue surface with dry leaves in the background. (cc0)
-- `dry_kachori.webp` — Freshly made Indian kachoris served in a buffet dish with green chutney. (cc0)
-- `jada_gathiya.webp` — A close-up of Vanela Gathiya is deep-fried in a large, round pan. The snack is golden-brown in color and has a twisted, rope-like shape, it is surrounded by bubbling oil and it is being cooked. Vanela Gathiya is a popular Indian snack, especially in Gujarat, and is known for its soft and fluffy texture. Captured from the streets of Ahmedabad. (cc0)
-- `khaman.webp` — A serving of soft yellow Khaman Dhokla garnished with fresh coriander leaves, placed in a silver foil plate with a small container of green chutney, on a wooden table. (cc0)
-- `khaman_sev.webp` — Khaman Dhokla (cc0)
-- `makai_chewda.webp` — Bombaymix (Public domain)
-- `mango_lassi.webp` — Mango Lassi and Butter Milk - Vel South Indian Kitchen + Bar (cc0)
-- `punjabi_lassi.webp` — Tall glass of creamy lassi topped with ice cream and nuts, with two straws on a dark table. (cc0)
-- `punjabi_samosa.webp` — Two crispy golden samosas served on a white plate with green chilies and two small bowls of green chutney and red tamarind sauce, placed on a wooden table. (cc0)
-- `sing_bhujiya.webp` — Vegetable tikka masala, peanuts, and Ning Chi chili with garlic, on wild rice - Massachusetts (cc0)
+- `chinese_samosa.webp`: A white leaf-patterned plate with golden fried snacks like bhajias and a samosa, served with tomato ketchup on a blue surface with dry leaves in the background. (cc0)
+- `dry_kachori.webp`: Freshly made Indian kachoris served in a buffet dish with green chutney. (cc0)
+- `jada_gathiya.webp`: A close-up of Vanela Gathiya is deep-fried in a large, round pan. The snack is golden-brown in color and has a twisted, rope-like shape, it is surrounded by bubbling oil and it is being cooked. Vanela Gathiya is a popular Indian snack, especially in Gujarat, and is known for its soft and fluffy texture. Captured from the streets of Ahmedabad. (cc0)
+- `khaman.webp`: A serving of soft yellow Khaman Dhokla garnished with fresh coriander leaves, placed in a silver foil plate with a small container of green chutney, on a wooden table. (cc0)
+- `khaman_sev.webp`: Khaman Dhokla (cc0)
+- `makai_chewda.webp`: Bombaymix (Public domain)
+- `mango_lassi.webp`: Mango Lassi and Butter Milk - Vel South Indian Kitchen + Bar (cc0)
+- `punjabi_lassi.webp`: Tall glass of creamy lassi topped with ice cream and nuts, with two straws on a dark table. (cc0)
+- `punjabi_samosa.webp`: Two crispy golden samosas served on a white plate with green chilies and two small bowls of green chutney and red tamarind sauce, placed on a wooden table. (cc0)
+- `sing_bhujiya.webp`: Vegetable tikka masala, peanuts, and Ning Chi chili with garlic, on wild rice - Massachusetts (cc0)
 
 ## Notes
 
@@ -55,4 +68,4 @@ which is what this page is for.
 - The two blurred shop-interior pictures are the shop's own, not stock.
 - The logo (`images/logo.svg`) and the iPhone icon made from it are original work
   for this shop. No credit needed, and nobody else has a claim on them.
-- The earlier artwork is kept in `images/previous/` — nothing was deleted.
+- The earlier artwork is kept in `images/previous/`. Nothing was deleted.
