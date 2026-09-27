@@ -102,10 +102,19 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
 - **Social links** — the shop has no Facebook or Instagram page, so the footer
   carries only Call, WhatsApp and Google Maps. If a page is ever made, add the
   icon back next to those three in the `footer-socials` block.
-- **Share preview** — the `og:`/`twitter:`/`canonical` URLs in `<head>` are
-  absolute and hard-coded to `https://hackmeet.github.io/raghuvanshi/`. They must
-  be absolute or WhatsApp and Facebook will not show the preview image, so if the
-  site moves to a custom domain, update those five URLs.
+- **Where the site lives** — `https://raghuvanshikhaman.vercel.app`, deployed
+  from this folder with the Vercel CLI. There is no Git connection, so **a
+  `git push` does not publish anything**: run `vercel --prod` to deploy.
+- **Share preview** — the `canonical`, `og:url`, `og:image` and `twitter:image`
+  tags in `<head>`, the `url`, `image` and `logo` fields in the JSON-LD block,
+  the `<loc>` in `sitemap.xml` and the `Sitemap:` line in `robots.txt` are all
+  absolute and hard-coded. They must be absolute or WhatsApp and Facebook will
+  not show the preview image. If the site ever moves again, all nine change
+  together:
+
+  ```bash
+  grep -rln 'raghuvanshikhaman.vercel.app' index.html sitemap.xml robots.txt
+  ```
 - **"Years in Silvassa" counter** — this works itself out from `data-since="1999"`
   on the stat in `index.html`, so it will read 28 in 2027 without anyone editing it.
   The year 1999 also appears in the page title, the hero, the About Us heading and
