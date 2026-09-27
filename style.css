@@ -2949,3 +2949,34 @@ footer {
 
 /* The emblem is square; never let a container stretch it out of shape */
 .logo-icon, .footer-logo img, .hv-logo { object-fit: contain; aspect-ratio: 1 / 1; border-radius: 50%; background-color: #fff; }
+
+/* Plain-text menu that sits in #menu-grid until script.js renders the cards over
+   it. Visitors with JavaScript never see this; search engines and no-JS browsers
+   get the full item list. Styled so it still reads properly if JS never runs. */
+.menu-static {
+  grid-column: 1 / -1;
+  text-align: left;
+}
+
+.menu-static h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin: 22px 0 10px;
+}
+
+.menu-static ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.menu-static li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.menu-static strong {
+  font-weight: 700;
+}

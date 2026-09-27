@@ -284,9 +284,26 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* -------------------------------------------------------------------------
    Menu rendering
    ------------------------------------------------------------------------- */
+/* index.html carries a plain-text copy of the menu inside #menu-grid so the item
+   names are in the HTML for search engines and for anyone without JavaScript.
+   It is thrown away the first time the cards render. This warns if someone adds
+   an item here and forgets to add it there. */
+function checkStaticMenuInStep(menuGrid) {
+  const stat = menuGrid.querySelector('.menu-static');
+  if (!stat) return;
+  const listed = Number(stat.dataset.staticItems);
+  if (listed !== menuItems.length) {
+    console.warn(
+      `The static menu in index.html lists ${listed} items but script.js has ` +
+      `${menuItems.length}. Update the .menu-static block so search engines see them all.`
+    );
+  }
+}
+
 function renderMenu(itemsToRender) {
   const menuGrid = document.getElementById('menu-grid');
   if (!menuGrid) return;
+  checkStaticMenuInStep(menuGrid);
   menuGrid.innerHTML = '';
 
   if (itemsToRender.length === 0) {

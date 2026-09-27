@@ -21,7 +21,8 @@ Whatever is in this folder is exactly what gets served.
 | `images/apple-touch-icon.png` | Home-screen icon for iPhones, 180x180 |
 | `documents/` | The downloadable PDF menu |
 | `404.html` | Shown if someone opens a wrong link |
-| `.nojekyll`, `vercel.json`, `robots.txt` | Hosting config |
+| `sitemap.xml`, `robots.txt` | What search engines read |
+| `.nojekyll`, `vercel.json` | Hosting config |
 
 `serve.js` is only for previewing on your own computer. It is not needed once the
 site is hosted. `generate_pdf.py`, `items/` and `images/previous/` are working
@@ -156,6 +157,23 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   a flag in `localStorage` under `raghuvanshi-reopening-2026-10-11`. The opening
   date is part of that key on purpose: change the date and everyone who dismissed
   the old announcement sees the new one. Change `REOPENING_KEY` to match.
+- **The menu appears twice in the source** — once as the `menuItems` list in
+  `script.js`, which draws the cards, and once as a plain `.menu-static` list
+  inside `#menu-grid` in `index.html`. The static copy is thrown away the instant
+  the cards render, so nobody sees both. It exists because the cards are built by
+  JavaScript, and without it the item names are not in the HTML that search
+  engines read first: "dhokla" and "khandvi" did not appear on the page at all.
+  **Add an item in both places.** `script.js` compares the counts on every render
+  and logs a console warning if they drift apart.
+- **Search engines** — `sitemap.xml` lists the one page and `robots.txt` points
+  at it. Neither does anything until the site is submitted to Google Search
+  Console, which is the step that actually gets it crawled.
+
+  For "khaman silvassa" and anything else local, the website is not the main
+  lever: those searches are answered by the Google Maps pack above the web
+  results, and that comes from a **Google Business Profile**, which is free and
+  has to be claimed for the shop separately. Without it the shop does not appear
+  in Maps at all.
 - **Structured data** — the `application/ld+json` block at the end of `<head>`
   is what lets Google show the address, hours and a call button in search
   results. Keep it in step with the address and hours in the page. It carries no

@@ -177,9 +177,11 @@
        ============================================================ -->
   <section class="hero-section" id="top" data-tone="deep">
     <div class="hero-inner">
-      <span class="hero-eyebrow reveal">Serving Authentic Taste Since 1999</span>
+      <span class="hero-eyebrow reveal">Serving Silvassa Since 1999</span>
 
-      <h1 class="hero-title reveal">Authentic<br>Gujarati <em>Farsan &amp; Snacks.</em></h1>
+      <!-- The h1 is the strongest heading on the page, so it names what we sell and
+           where we are, which is what people actually type into Google. -->
+      <h1 class="hero-title reveal">Authentic Khaman<br><em>&amp; Gujarati Farsan in Silvassa.</em></h1>
 
       <p class="hero-lead reveal">Raghuvanshi Khaman House &amp; Lassi Centre brings real Gujarati taste to the heart of
         Silvassa. Our shelves are packed with crispy gathiya, hot samosas, an array of Suko Nasto, and our famous
@@ -342,12 +344,52 @@
       </div>
 
       <div class="menu-grid" id="menu-grid">
-        <!-- Rendered dynamically by script.js -->
+        <!-- Static copy of the menu. script.js clears this the moment it renders the
+             cards, so visitors never see both. It exists so the item names are in the
+             HTML for search engines and for anyone without JavaScript. Keep it in step
+             with the menuItems list at the top of script.js: the count is checked at
+             runtime and a mismatch is logged to the console. -->
+        <div class="menu-static" data-static-items="24">
+          <h3>Hot Snacks</h3>
+          <ul>
+            <li><strong>Khaman</strong> (250 gms). Soft, spongy and light. Steamed besan with mustard seeds, curry leaves and green chilli.</li>
+            <li><strong>White Dhokla</strong> (250 gms). Soft white dhokla made from rice and dal. Light on the stomach, with black pepper and coriander.</li>
+            <li><strong>Khaman &amp; Sev</strong> (250 gms). Our soft khaman with a thick layer of crunchy nylon sev on top.</li>
+            <li><strong>Sev Khamni</strong> (250 gms). Crumbled khaman mixed with garlic, green chilli and masala. Topped with pomegranate and sev.</li>
+            <li><strong>Khandvi</strong> (250 gms). Soft besan rolls with a light buttermilk tang, topped with coconut and mustard seeds.</li>
+            <li><strong>Mini Punjabi Samosa</strong> (250 gms). Small crispy samosas filled with spiced potato and green peas.</li>
+            <li><strong>Chinese Samosa</strong> (250 gms). Crispy samosas filled with spicy noodles and veggies. Kids love these.</li>
+            <li><strong>Coconut Patties</strong> (250 gms). Golden potato patties stuffed with sweet coconut, raisins and herbs.</li>
+            <li><strong>Farali Peties (Upvas)</strong> (250 gms). Upvas special. Potato balls stuffed with coconut, cashew and raisins.</li>
+            <li><strong>Sabudana Vada (Farali)</strong> (Plate). Crispy sabudana and potato vada with peanuts and cumin. Comes with green chutney.</li>
+          </ul>
+          <h3>Suko Nasto (dry farsan)</h3>
+          <ul>
+            <li><strong>Jada Gathiya</strong> (250 gms). Thick, crunchy besan gathiya. Best with hot tea or pickle.</li>
+            <li><strong>Bhavnagri Gathiya</strong> (250 gms). Light, soft gathiya in Bhavnagar style. Mild, not spicy.</li>
+            <li><strong>Tikha Gathiya</strong> (250 gms). Crispy gathiya with red chilli and masala. For those who like it spicy.</li>
+            <li><strong>Jadi Sev</strong> (250 gms). Thick sev with black pepper and ajwain.</li>
+            <li><strong>Nylon Sev</strong> (100 gms). Very fine, crispy golden sev. Eat as is or sprinkle on anything.</li>
+            <li><strong>Wheat Chakri</strong> (250 gms). Crunchy wheat chakri with sesame and spices.</li>
+            <li><strong>Dry Kachori</strong> (250 gms). Small flaky kachoris filled with sweet-spicy dal and dry fruit.</li>
+            <li><strong>Mini Bhakharwadi</strong> (500 gms). Small bite-size bhakharwadi with sweet-spicy coconut and sesame masala.</li>
+            <li><strong>Big Bhakharwadi</strong> (500 gms). Big, crispy bhakharwadi rolls with roasted sweet-spicy masala inside.</li>
+            <li><strong>Sing Bhujiya</strong> (250 gms). Crunchy masala-coated peanuts. Perfect with a glass of lassi.</li>
+            <li><strong>Makai Chewda</strong> (250 gms). Sweet and salty cornflake mix with peanuts, cashew, raisins and curry leaves.</li>
+          </ul>
+          <h3>Lassi &amp; Chhas</h3>
+          <ul>
+            <li><strong>Punjabi Lassi</strong> (200 ml). Thick, chilled sweet lassi with a layer of fresh malai on top.</li>
+            <li><strong>Mango Lassi</strong> (200 ml). Thick sweet lassi blended with Alphonso mango.</li>
+            <li><strong>Masala Chhas (Buttermilk)</strong> (650 ml). Light masala buttermilk with green chilli, ginger, cumin and coriander.</li>
+          </ul>
+        </div>
       </div>
 
       <noscript>
-        <p class="menu-footnote">Our menu list needs JavaScript to load. Please call Sandeep at
-          <a href="tel:+919825261590">+91 98252-61590</a> or Jeet at <a href="tel:+919638227370">+91 96382-27370</a> and we will tell you what is ready today,
+        <p class="menu-footnote">That is everything we make. Search and the category filters need
+          JavaScript, so to check what is ready today please call Sandeep at
+          <a href="tel:+919825261590">+91 98252-61590</a> or Jeet at <a href="tel:+919638227370">+91 96382-27370</a>,
           or come to 13, Perin Complex, Kilavni Naka, Silvassa (open all week, 8:30 AM to 9:00 PM).
         </p>
       </noscript>
