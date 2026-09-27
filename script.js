@@ -283,10 +283,13 @@ function renderMenu(itemsToRender) {
   menuGrid.innerHTML = '';
 
   if (itemsToRender.length === 0) {
+    /* A real button, not an instruction to tap something else: the categories
+       used to be suggested here, and tapping one changed nothing. */
     menuGrid.innerHTML = `
       <div class="no-results">
         <i class="icon"><svg><use href="#i-magnifying-glass"></use></svg></i>
-        <p>Nothing matched that. Try another name, or tap "All Items".</p>
+        <p>Nothing matched that. Try another name, or see everything we make.</p>
+        <button type="button" class="no-results-btn" onclick="resetMenu()">Show the full menu</button>
       </div>
     `;
     return;
@@ -367,22 +370,67 @@ function renderNastoStrip() {
 /* -------------------------------------------------------------------------
    Menu filtering & search
    ------------------------------------------------------------------------- */
+/* Tapping a category clears whatever is in the search box. Before this, a query
+   that matched nothing kept filtering after you picked a category, so every
+   category looked empty and the only way out was deleting the text by hand. */
 function setupCategoryFilters() {
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      filterMenu(btn.getAttribute('data-category'), document.getElementById('search-input').value);
+      setSearchValue('');
+      filterMenu(btn.getAttribute('data-category'), '');
     });
   });
 }
 
+/* Keeps the input, the clear button and the menu in step. */
+function setSearchValue(value) {
+  const searchInput = document.getElementById('search-input');
+  const clearBtn = document.getElementById('search-clear');
+  if (searchInput) searchInput.value = value;
+  if (clearBtn) clearBtn.hidden = value === '';
+}
+
+function activeCategory() {
+  const activeBtn = document.querySelector('.filter-btn.active');
+  return activeBtn ? activeBtn.getAttribute('data-category') : 'all';
+}
+
+/* Puts the menu back to every item, from anywhere. */
+function resetMenu() {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+  if (allBtn) allBtn.classList.add('active');
+  setSearchValue('');
+  filterMenu('all', '');
+}
+window.resetMenu = resetMenu;
+
 function setupSearch() {
   const searchInput = document.getElementById('search-input');
   if (!searchInput) return;
+
   searchInput.addEventListener('input', (e) => {
-    const activeBtn = document.querySelector('.filter-btn.active');
-    filterMenu(activeBtn ? activeBtn.getAttribute('data-category') : 'all', e.target.value);
+    setSearchValue(e.target.value);
+    filterMenu(activeCategory(), e.target.value);
+  });
+
+  const clearBtn = document.getElementById('search-clear');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      setSearchValue('');
+      filterMenu(activeCategory(), '');
+      searchInput.focus();
+    });
+  }
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchInput.value !== '') {
+      e.stopPropagation();          /* do not also close a modal */
+      setSearchValue('');
+      filterMenu(activeCategory(), '');
+    }
   });
 }
 

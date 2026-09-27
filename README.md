@@ -168,6 +168,24 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   the sprite and reference its id. The glyphs are Font Awesome Free 6.4.0
   (CC BY 4.0), which is why the sprite carries a licence comment. Loading these
   22 icons as a webfont from cdnjs used to cost 272 KB.
+- **The `.js` class on `<html>`** — one inline script in `<head>` adds it before
+  anything paints, and `style.css` scopes the scroll-in animation to `.js .reveal`.
+  The hidden state is opted into, so with JavaScript off the page is simply
+  visible. Before this, all 59 `.reveal` elements, the `h1` included, started at
+  `opacity: 0` and a visitor without JavaScript got a blank page. **Any new
+  animation that hides content by default belongs under `.js` too.**
+- **Search always has a way out** — the box has a clear (x) button, pressing
+  Escape in it clears the text, tapping a category resets the query, and the
+  "nothing matched" state offers a *Show the full menu* button that calls
+  `resetMenu()`. Previously a query matching nothing kept filtering after you
+  picked a category, so every category looked empty and the only escape was
+  deleting the text by hand.
+- **Tap targets and focus** — anything a finger hits is padded to about 44px, and
+  `:focus-visible` draws a 3px orange outline because the browser default all but
+  vanishes on the dark sections. There is a "Skip to content" link as the first
+  tab stop. Two inline links inside sentences, "see them" and "see the full menu",
+  are still 32px tall: block padding there would disturb the line spacing, and
+  both duplicate navigation available elsewhere.
 - **The announcement pop-up** — shows 1.2 seconds after **every** page load, on
   purpose. Dismissing it is not remembered, so a returning visitor sees it again.
   The close button, the backdrop and the Escape key all dismiss it for that visit.
