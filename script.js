@@ -601,40 +601,19 @@ function setupMobileMenu() {
 /* -------------------------------------------------------------------------
    Modals
    ------------------------------------------------------------------------- */
-/* The announcement is shown once per visitor, not on every page load. The key
-   carries the opening date, so changing that date brings the pop-up back for
-   everyone who has already dismissed the old one. */
-const REOPENING_KEY = 'raghuvanshi-reopening-2026-10-11';
-
-/* Safari in private mode throws on localStorage, so never let it break the page. */
-function announcementSeen() {
-  try {
-    return localStorage.getItem(REOPENING_KEY) === 'seen';
-  } catch (e) {
-    return false;
-  }
-}
-
+/* The announcement shows on every page load, by choice: the re-opening is the
+   thing the shop most wants people to see, and a returning visitor seeing it
+   again is the point. Dismissing it is deliberately not remembered.
+   To show it only once per visitor instead, store a flag in localStorage when
+   closeModal runs and check it here before the setTimeout. */
 function closeModal(modal) {
   modal.classList.remove('active');
-  if (modal.id === 'reopening-modal') {
-    try {
-      localStorage.setItem(REOPENING_KEY, 'seen');
-    } catch (e) {
-      /* Nothing to remember it with. The pop-up simply shows again next time. */
-    }
-  }
 }
 
 function setupReopeningModal() {
   const modal = document.getElementById('reopening-modal');
   window.dismissReopening = function () { };
   if (!modal) return;
-
-  if (announcementSeen()) {
-    modal.remove();
-    return;
-  }
 
   setTimeout(() => modal.classList.add('active'), 1200);
   window.dismissReopening = function () { closeModal(modal); };

@@ -168,10 +168,12 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   the sprite and reference its id. The glyphs are Font Awesome Free 6.4.0
   (CC BY 4.0), which is why the sprite carries a licence comment. Loading these
   22 icons as a webfont from cdnjs used to cost 272 KB.
-- **The announcement pop-up** — `script.js` shows it once per visitor and stores
-  a flag in `localStorage` under `raghuvanshi-reopening-2026-10-11`. The opening
-  date is part of that key on purpose: change the date and everyone who dismissed
-  the old announcement sees the new one. Change `REOPENING_KEY` to match.
+- **The announcement pop-up** — shows 1.2 seconds after **every** page load, on
+  purpose. Dismissing it is not remembered, so a returning visitor sees it again.
+  The close button, the backdrop and the Escape key all dismiss it for that visit.
+  To make it appear only once per visitor instead, write a flag to `localStorage`
+  in `closeModal()` and check it in `setupReopeningModal()` before the
+  `setTimeout`. Key it on the opening date so changing the date shows it again.
 - **The menu appears twice in the source** — once as the `menuItems` list in
   `script.js`, which draws the cards, and once as a plain `.menu-static` list
   inside `#menu-grid` in `index.html`. The static copy is thrown away the instant
