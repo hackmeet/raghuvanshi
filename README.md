@@ -87,17 +87,17 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
 
 ## Things worth updating later
 
-- **Opening date** — set to **Sunday, 11 October 2026**, the first day of
+- **Opening date** — set to **Monday, 12 October 2026**, the second day of
   Navratri. It appears in five places in `index.html`: the two `teaser-badge`
   labels and the `visit-address` line in the New Shop section, the last item of
-  the About Us timeline, the "Opening 11 October 2026" row in the Visit Us card,
+  the About Us timeline, the "Opening 12 October 2026" row in the Visit Us card,
   and the `announce-info` line in the pop-up. The `og:`/`twitter:` descriptions
   in `<head>` mention it too.
 - **Shop photos** — `images/shop_interior_1.webp` and `_2.webp` are deliberately
   blurred by CSS. Replace them with the real photos after the opening and remove
   the `filter: blur(...)` rule on `.teaser-img` in `style.css`.
 - **After the move** — once 18 & 19 is open, swap the "Open now / Opening
-  11 October 2026" address lines in the New Shop section and the Visit Us card
+  12 October 2026" address lines in the New Shop section and the Visit Us card
   over to the new number, drop the two `teaser-badge` labels, and update the
   Google Maps links.
 - **Social links** — the shop has no Facebook or Instagram page, so the footer
@@ -219,6 +219,21 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   results, and that comes from a **Google Business Profile**, which is free and
   has to be claimed for the shop separately. Without it the shop does not appear
   in Maps at all.
+- **Common Questions (section 08)** — plain `<details>` blocks, so every answer
+  is real text in the HTML rather than something a script reveals. The FAQPage
+  block in `<head>` is generated from exactly those questions and answers.
+  **Edit the section and the markup together**: Google drops FAQ markup that
+  does not match what a visitor can read on the page.
+- **The menu is in the structured data too** — the `hasMenu` field carries all
+  24 items in their three sections, with descriptions and image URLs. That is
+  what lets a search engine understand the shop sells khandvi and sev khamni
+  rather than just "food". It is written by hand in `index.html`, so adding a
+  menu item means adding it in three places: `script.js`, the `.menu-static`
+  block, and `hasMenu`.
+- **What is deliberately NOT in the structured data** — no `aggregateRating`,
+  no `priceRange`, no `paymentAccepted`, no geo coordinates. Inventing any of
+  those is what gets structured data ignored or penalised. Add them only from
+  real, verified values.
 - **Structured data** — the `application/ld+json` block at the end of `<head>`
   is what lets Google show the address, hours and a call button in search
   results. Keep it in step with the address and hours in the page. It carries no

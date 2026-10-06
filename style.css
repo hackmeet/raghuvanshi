@@ -3095,3 +3095,75 @@ footer {
   color: var(--text-main);
   white-space: nowrap;
 }
+
+/* --------------------------------------------------------------------------
+   COMMON QUESTIONS
+   Native <details> so the answers are real text in the page, readable by
+   search engines and by anyone without JavaScript, not hidden behind a script.
+   -------------------------------------------------------------------------- */
+.faq-list {
+  max-width: 820px;
+  margin-top: 36px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 2px;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+/* the default disclosure triangle, in both engines */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { content: ''; }
+
+.faq-item summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--primary);
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+  color: var(--primary-hover);
+}
+
+.faq-item p {
+  padding: 0 2px 22px;
+  margin: 0;
+  max-width: 68ch;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.faq-item p a {
+  color: var(--primary-hover);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 599px) {
+  .faq-list { margin-top: 26px; }
+  .faq-item summary { font-size: 0.98rem; padding: 18px 2px; }
+  .faq-item p { font-size: 0.95rem; padding-bottom: 18px; }
+}

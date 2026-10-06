@@ -303,7 +303,7 @@ function renderMenu(itemsToRender) {
     card.innerHTML = `
       ${item.popular ? '<span class="badge-popular">Most Loved</span>' : ''}
       <div class="card-img-wrapper">
-        <img class="lazy-load" src="${item.image}" alt="${item.name}" loading="lazy">
+        <img class="lazy-load" src="${item.image}" alt="${item.name}, fresh Gujarati farsan at Raghuvanshi Khaman House, Silvassa" loading="lazy">
         <div class="veg-indicator">
           <span class="veg-box"><span class="veg-dot"></span></span>
         </div>
@@ -337,7 +337,7 @@ function renderSignatures() {
       <article class="sig-card reveal">
         <div class="sig-img">
           <span class="sig-flag">${pick.flag}</span>
-          <img src="${item.image}" alt="${item.name}" loading="lazy">
+          <img src="${item.image}" alt="${item.name} at Raghuvanshi Khaman House, Kilavni Naka, Silvassa" loading="lazy">
         </div>
         <div class="sig-body">
           <h3>${item.name}</h3>
@@ -360,7 +360,7 @@ function renderNastoStrip() {
     if (!item) return '';
     return `
       <div class="nasto-card reveal">
-        <img src="${item.image}" alt="${item.name}" loading="lazy">
+        <img src="${item.image}" alt="${item.name} at Raghuvanshi Khaman House, Kilavni Naka, Silvassa" loading="lazy">
         <span>${item.name}</span>
       </div>
     `;
