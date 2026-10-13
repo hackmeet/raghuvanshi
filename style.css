@@ -3042,3 +3042,50 @@ footer {
   .faq-item summary { font-size: 0.98rem; padding: 18px 2px; }
   .faq-item p { font-size: 0.95rem; padding-bottom: 18px; }
 }
+
+/* --------------------------------------------------------------------------
+   THANK-YOU NOTE
+   Sits on the dark New Shop section, so it reads as a warm aside rather than
+   another call to action: no buttons, no address, just the message.
+   -------------------------------------------------------------------------- */
+.thanks-note {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 34px 0 10px;
+  padding: 26px 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255, 183, 77, 0.14), rgba(255, 111, 0, 0.08));
+  border: 1px solid rgba(255, 183, 77, 0.28);
+}
+
+.thanks-note > .icon {
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-top: 2px;
+}
+
+.thanks-note h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--tone-text);
+  margin-bottom: 8px;
+}
+
+.thanks-note p {
+  color: var(--tone-muted);
+  line-height: 1.75;
+  max-width: 68ch;
+}
+
+@media (max-width: 599px) {
+  .thanks-note {
+    gap: 14px;
+    padding: 20px 18px;
+    margin: 26px 0 6px;
+  }
+  .thanks-note h3 { font-size: 1.2rem; }
+  .thanks-note p { font-size: 0.95rem; }
+}
