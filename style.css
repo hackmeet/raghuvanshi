@@ -3045,47 +3045,44 @@ footer {
 
 /* --------------------------------------------------------------------------
    THANK-YOU NOTE
-   Sits on the dark New Shop section, so it reads as a warm aside rather than
-   another call to action: no buttons, no address, just the message.
+   No icon: on a phone it stole 76px of a 358px block and squeezed the text to
+   37 characters a line. Full width instead, amber heading, and the body at
+   full strength rather than the 76% muted tone, which read as washed out
+   against the dark section.
    -------------------------------------------------------------------------- */
 .thanks-note {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 34px 0 10px;
-  padding: 26px 24px;
+  padding: 28px 30px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(255, 183, 77, 0.14), rgba(255, 111, 0, 0.08));
-  border: 1px solid rgba(255, 183, 77, 0.28);
-}
-
-.thanks-note > .icon {
-  flex: 0 0 auto;
-  font-size: 1.5rem;
-  color: var(--primary);
-  margin-top: 2px;
+  border: 1px solid rgba(255, 183, 77, 0.2);
+  border-left: 4px solid var(--tone-accent);
+  background: rgba(255, 183, 77, 0.06);
 }
 
 .thanks-note h3 {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
-  color: var(--tone-text);
-  margin-bottom: 8px;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--tone-accent);
+  margin-bottom: 12px;
 }
 
 .thanks-note p {
-  color: var(--tone-muted);
+  color: var(--tone-text);
+  font-size: 1rem;
   line-height: 1.75;
-  max-width: 68ch;
+  max-width: 62ch;
 }
 
 @media (max-width: 599px) {
   .thanks-note {
-    gap: 14px;
-    padding: 20px 18px;
     margin: 26px 0 6px;
+    padding: 22px 20px;
+    border-radius: var(--radius-md);
   }
-  .thanks-note h3 { font-size: 1.2rem; }
-  .thanks-note p { font-size: 0.95rem; }
+
+  .thanks-note h3 { font-size: 1.35rem; margin-bottom: 10px; }
+  .thanks-note p { font-size: 0.98rem; line-height: 1.7; }
+}
 }
