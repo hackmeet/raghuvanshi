@@ -3064,7 +3064,9 @@ footer {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   line-height: 1.25;
-  color: var(--tone-accent);
+  /* --tone-text, not --tone-accent: the amber went muddy against the brown and
+     did not match the headings on the rest of the dark sections. */
+  color: var(--tone-text);
   margin-bottom: 12px;
 }
 
