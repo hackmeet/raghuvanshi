@@ -87,15 +87,21 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
 
 ## Things worth updating later
 
-- **Opening date** — set to **Monday, 12 October 2026**, the second day of
-  Navratri. It appears in five places in `index.html`: the two `teaser-badge`
+- **The shop has moved.** Since **Monday 12 October 2026**, the second day of
+  Navratri, the address everywhere on the site is **18 & 19, Perin Complex,
+  Kilavni Naka, Silvassa 396230**. The old counter at 13 is mentioned only to
+  help regulars find the new one. It appears in five places in `index.html`: the two `teaser-badge`
   labels and the `visit-address` line in the New Shop section, the last item of
   the About Us timeline, the "Opening 12 October 2026" row in the Visit Us card,
   and the `announce-info` line in the pop-up. The `og:`/`twitter:` descriptions
   in `<head>` mention it too.
-- **Shop photos** — `images/shop_interior_1.webp` and `_2.webp` are deliberately
-  blurred by CSS. Replace them with the real photos after the opening and remove
-  the `filter: blur(...)` rule on `.teaser-img` in `style.css`.
+- **The new shop has no photographs yet.** Section 06 used to show two
+  "blurred preview" images. They were stock pictures of a different sweet shop,
+  with another business's name legible on the wall, and only passable because
+  the blur hid it. They have been deleted. **Photograph 18 & 19 and drop the
+  pictures into section 06** as an ordinary gallery: no blur, no teasing, the
+  shop is open.
+
 - **After the move** — once 18 & 19 is open, swap the "Open now / Opening
   12 October 2026" address lines in the New Shop section and the Visit Us card
   over to the new number, drop the two `teaser-badge` labels, and update the
@@ -178,6 +184,11 @@ by id further down in `script.js`, in `renderSignatures()` and `renderNastoStrip
   the sprite and reference its id. The glyphs are Font Awesome Free 6.4.0
   (CC BY 4.0), which is why the sprite carries a licence comment. Loading these
   22 icons as a webfont from cdnjs used to cost 272 KB.
+- **The announcement pop-up is gone.** It was removed once the new shop opened.
+  `closeModal()` and the backdrop/Escape handlers in `script.js` stayed, and so
+  did the `.modal-*` CSS, so a future announcement (a festival, a holiday
+  closure) only needs the markup putting back. The teaser CSS was deleted
+  outright, since that blurred-preview idea will not return.
 - **The `.js` class on `<html>`** — one inline script in `<head>` adds it before
   anything paints, and `style.css` scopes the scroll-in animation to `.js .reveal`.
   The hidden state is opted into, so with JavaScript off the page is simply

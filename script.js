@@ -649,22 +649,11 @@ function setupMobileMenu() {
 /* -------------------------------------------------------------------------
    Modals
    ------------------------------------------------------------------------- */
-/* The announcement shows on every page load, by choice: the re-opening is the
-   thing the shop most wants people to see, and a returning visitor seeing it
-   again is the point. Dismissing it is deliberately not remembered.
-   To show it only once per visitor instead, store a flag in localStorage when
-   closeModal runs and check it here before the setTimeout. */
+/* The re-opening announcement that used to appear here was removed once the
+   new shop opened on 12 October 2026. closeModal stays because the backdrop
+   and Escape handlers below still use it, and any future modal will too. */
 function closeModal(modal) {
   modal.classList.remove('active');
-}
-
-function setupReopeningModal() {
-  const modal = document.getElementById('reopening-modal');
-  window.dismissReopening = function () { };
-  if (!modal) return;
-
-  setTimeout(() => modal.classList.add('active'), 1200);
-  window.dismissReopening = function () { closeModal(modal); };
 }
 
 function setupModalDismiss() {
@@ -716,7 +705,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupMobileMenu();
   setupCategoryFilters();
   setupSearch();
-  setupReopeningModal();
   setupModalDismiss();
 
   setupReveals();
